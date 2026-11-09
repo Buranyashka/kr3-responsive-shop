@@ -26,7 +26,7 @@ fetch('data/products.json')
         
         <div class="product-card__actions">
           <a class="button button--primary product-card__button"
-             href="order.html?product=${encodeURIComponent(p.name)}">Заказать</a>
+            href="order.html?id=${p.id}">Заказать</a>
         </div>
         
       </article>

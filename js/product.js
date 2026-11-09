@@ -47,7 +47,7 @@ if (!id){
 
       const orderLink = document.getElementById('order-link');
       if (orderLink) {
-        orderLink.href = `order.html?product=${encodeURIComponent(p.name)}`;
+        orderLink.href = `order.html?id=${p.id}`;
       }
     })
     .catch(err => {
