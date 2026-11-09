@@ -3,70 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Товар 1 — Учебный интернет-магазин</title>
-  <meta name="description" content="Карточка товара учебного интернет-магазина: описание, характеристики, цена.">
+  <title>Bonsai Shop</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
   <script src="js/main.js" defer></script>
+  <script src="js/product.js" defer></script>
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Товар 1 — Учебный интернет-магазин">
-  <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
-  <meta property="og:image" content="https://Buranyashka.github.io/kr1-html-css-shop/images/preview.jpg">
+  <meta property="og:title" content="Bonsai Shop">
+  <meta property="og:description" content="Интернет-магазин бонсаев.">
+  <meta property="og:image" content="https://Buranyashka.github.io/kr3-html-css-shop/images/preview.jpg">
+
+  <meta name="description" content="Карточка товара учебного интернет-магазина: описание, характеристики, цена.">
 </head>
 
 <body>
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
-
-      <nav class="site-nav" aria-label="Основная навигация">
-        <ul class="site-nav__list">
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html">Главная</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="order.html">Заявка</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="contacts.html">Контакты</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+      <a class="site-header__logo" href="index.html" style="font-size: 32px">Bonsai Shop</a>
   </header>
 
   <main>
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a class="breadcrumbs__link" href="index.html">Главная</a>
       <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
-      <span class="breadcrumbs__current">Товар 1</span>
+      <span class="breadcrumbs__current" id="breadcrumb-name"></span>
     </nav>
 
     <section class="product-detail">
       <div class="product-detail__gallery">
-        <div class="product-detail__image" aria-hidden="true">
-          <span class="product-detail__image-text">Фото товара</span>
+        <div class="product-detail_image">
+          <img
+            id="product-image"
+            class="product-detail__img"
+            src="images/placeholder.jpg"
+            alt=""
+            width="600"
+            height="600"
+          >
         </div>
 
-        <span class="product-card__badge">Хит</span>
+        <span class="product-card__badge" id="product-badge"></span>
       </div>
 
       <div class="product-detail__info">
-        <h1 class="product-detail__title">Товар 1</h1>
+        <h1 class="product-detail__title" id="product-title"></h1>
 
-        <p class="product-detail__price">1000 руб.</p>
+        <p class="product-detail__price" id="product-price"></p>
 
-        <p class="product-detail__description">
-          Учебный товар из ассортимента интернет-магазина.
-          Подходит для демонстрации карточки товара, характеристик,
-          таблицы и кнопки оформления заявки.
+        <p class="product-detail__description" id="product-description"></p>
         </p>
 
         <div class="product-detail__actions">
-          <a class="button button--primary" href="order.html">Оформить заявку</a>
+          <a class="button button--primary" id="order-link" href="order.html">Оформить заявку</a>
           <a class="button button--secondary" href="catalog.html">Назад в каталог</a>
         </div>
       </div>
@@ -84,26 +72,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Категория</td>
-            <td>Учебный товар</td>
-          </tr>
-          <tr>
-            <td>Артикул</td>
-            <td>EDU-001</td>
-          </tr>
-          <tr>
-            <td>Цена</td>
-            <td>1000 руб.</td>
-          </tr>
-          <tr>
-            <td>Наличие</td>
-            <td>В наличии</td>
-          </tr>
-          <tr>
-            <td>Гарантия</td>
-            <td>12 месяцев</td>
-          </tr>
+          <tr><td>Категория</td><td id="spec-category"></td></tr>
+          <tr><td>Артикул</td>  <td id="spec-sku"></td></tr>
+          <tr><td>Цена</td>     <td id="spec-price"></td></tr>
+          <tr><td>Наличие</td>  <td id="spec-stock"></td></tr>
         </tbody>
       </table>
     </section>
