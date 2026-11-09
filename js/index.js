@@ -28,9 +28,7 @@ fetch('data/products.json')
         <p class="product-card__price">${p.price} ₽</p>
         
         <a class="button button--primary product-card__button" 
-           href="order.html?product=${encodeURIComponent(p.name)}">
-          Заказать
-        </a>
+          href="order.html?id=${p.id}">Заказать</a>
       </article>
     `).join('');
   })
