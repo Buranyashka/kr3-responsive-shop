@@ -49,7 +49,6 @@ body {
   background-color: var(--color-bg);
 }
 
-/* Глобальная защита для всех картинок */
 img {
   max-width: 100%;
   height: auto;
@@ -66,11 +65,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Подсветка якоря (при переходе по ссылкам) */
-:target {
-  outline: 2px dashed var(--color-primary);
-  outline-offset: 4px;
-}
 
 /* ===============================
         Общие элементы (Ссылки)
@@ -737,4 +731,43 @@ a:focus-visible {
   padding: var(--space-lg);
   text-align: center;
   color: var(--color-muted);
+}
+
+/* ===============================
+        Ссылка пропуска
+   =============================== */
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -100px;
+  z-index: 1000;
+  padding: 8px 12px;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 16px;
+}
+
+/* ===============================
+        Настройки фокуса
+   =============================== */
+
+:focus-visible {
+  outline: 3px solid var(--color-primary, #0057b8);
+  outline-offset: 3px;
+}
+
+.site-nav__link:focus-visible,
+.button:focus-visible,
+.order-form__input:focus-visible,
+.order-form__textarea:focus-visible,
+.order-form__select:focus-visible {
+  outline: 3px solid var(--color-primary, #0057b8);
+  outline-offset: 3px;
 }
